@@ -1,0 +1,11 @@
+email: NIPD@smknegeri1garut.sch.id
+password: 123456
+#1 = Masuk Kantor
+#2 = WFH
+#3 = Dinas Luar
+#4 = Izin
+#5 = Sakit
+#6 = Keluar Kantor
+presence_type: 2
+jam_absen: 06:00
+jam_pulang: 16:00
