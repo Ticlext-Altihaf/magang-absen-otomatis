@@ -132,7 +132,7 @@ func loop() {
 		} else if sudah_absen_masuk && now.After(jam_pulang) {
 			println("Sudah jam pulang")
 		} else if !sudah_absen_masuk && now.After(jam_absen) {
-			println("Sudah jam absen")
+			println("Sudah jam absen, menunggu sampai besok")
 		}
 
 		if now.After(jam_absen) && now.Before(jam_pulang) && !sudah_absen_masuk {
