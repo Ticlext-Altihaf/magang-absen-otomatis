@@ -7,7 +7,7 @@ for /f "tokens=2*" %%A in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVe
 
 REM Create or overwrite the batch script in the startup folder
 echo @echo off > "%STARTUP_FOLDER%\magang-absen.bat"
-echo cd %~dp0 >> "%STARTUP_FOLDER%\magang-absen.bat"
+echo cd /d %~dp0 >> "%STARTUP_FOLDER%\magang-absen.bat"
 echo start magang-absen-otomatis.exe >> "%STARTUP_FOLDER%\magang-absen.bat"
 
 REM Execute the magang-absen-otomatis.exe in the current directory
