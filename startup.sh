@@ -8,7 +8,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$(pwd)/magang-absen-otomatis.exe
+WorkingDirectory=$(pwd)
+ExecStart=$(pwd)/magang-absen-otomatis
 
 [Install]
 WantedBy=multi-user.target
@@ -22,3 +23,5 @@ sudo systemctl enable magang-absen.service
 
 # Start the service
 sudo systemctl start magang-absen.service
+
+sudo systemctl status magang-absen.service
