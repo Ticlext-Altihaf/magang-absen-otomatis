@@ -8,8 +8,11 @@ After=network.target
 
 [Service]
 Type=simple
+User=1000
 WorkingDirectory=$(pwd)
 ExecStart=$(pwd)/magang-absen-otomatis
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
