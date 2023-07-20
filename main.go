@@ -131,10 +131,9 @@ func loop() {
 			println("Menunggu jam absen: ", fmt.Sprintf("%02d:%02d:%02d", int(durasi.Hours()), int(durasi.Minutes())%60, int(durasi.Seconds())%60), " (", jam_absen.Format("15:04"), ")")
 		} else if sudah_absen_masuk && now.After(jam_pulang) {
 			println("Sudah jam pulang")
-		} else if !sudah_absen_masuk && now.After(jam_absen) {
-			println("Sudah jam absen, menunggu sampai besok")
+		} else if !sudah_absen_masuk && now.After(jam_pulang) {
+			println("Sudah jam pulang, menunggu sampai besok")
 		}
-
 		if now.After(jam_absen) && now.Before(jam_pulang) && !sudah_absen_masuk {
 
 			cookie, err := absen_login()
