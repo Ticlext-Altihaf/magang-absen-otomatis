@@ -47,6 +47,7 @@ type Config struct {
 var config Config
 
 func init_w() {
+	
 	// Load the configuration file
 	viper.SetConfigFile("config.yaml")
 	//check if config file exists
@@ -93,10 +94,12 @@ func init_w() {
 	println("Jam pulang: ", config.Jam_pulang.Format("15:04"))
 	res, err := absen_login()
 	if err != nil {
-		panic("Gagal login: " + err.Error())
+		fmt.Println("Gagal login: " + err.Error())
+		beeep.Alert("Absen Magang Error", "Gagal login: "+err.Error(), "")
 	}
 	if res == "" {
-		panic("Gagal mendapatkan cookies: " + err.Error())
+		fmt.Println("Gagal mendapatkan cookies: " + err.Error())
+		beeep.Alert("Absen Magang Error", "Gagal mendapatkan cookies: "+err.Error(), "")
 	}
 }
 func loop() {
